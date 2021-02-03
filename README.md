@@ -1,14 +1,15 @@
 CALENDAR
-_________________________________________________________________________________________
+=====================
+__________________________________________________________________________________________
 
- GitHub Pages: 
+ [GitHub Pages](https://oksana4891.github.io/calendar/build/)
 
  _________________________________________________________________________________________
 
 
-Objectives:
+### Objectives:
 
-- Create a simple meeting planning calendar for a meeting room in your office:
+Create a simple meeting planning calendar for a meeting room in your office:
 - Display meetings planned;
 - Filter meetings for a particular team member;
 - Add new meetings;
@@ -16,11 +17,11 @@ Objectives:
 __________________________________________________________________________________________
 
 
-Technologies
+### Technologies
 
-Pure JavaScript (ES6, ES next) with Babel transpile;
-CSS;
-Webpack as a module bundler;
+- Pure JavaScript (ES6, ES next) with Babel transpile;
+- CSS;
+- Webpack as a module bundler;
 
 __________________________________________________________________________________________
 
