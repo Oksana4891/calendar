@@ -1,6 +1,3 @@
-import dragAndDrop from '../table/dragAndDrop.js';
-
-
 function  addEventToTable (indexDay, indexTime, event) { 
     let cell = document.querySelector(`[index-day="${indexDay}"][index-time="${indexTime}"]`);
        const eventBlock = `
@@ -9,9 +6,9 @@ function  addEventToTable (indexDay, indexTime, event) {
        <div class="calendar_cell--close js-remove">&times;</div>
        </div>
       `;
- 
+   
     cell.insertAdjacentHTML('beforeend', eventBlock);  
-  
+    const eventBlockSelector = cell.querySelector('.js-card-event'); 
   }
 
 export default  addEventToTable;  

@@ -1,6 +1,6 @@
 CALENDAR
 =====================
-__________________________________________________________________________________________
+________________________________________________________________________________________
 
  [GitHub Pages](https://oksana4891.github.io/calendar/build/)
 
@@ -24,6 +24,14 @@ ________________________________________________________________________________
 - Webpack as a module bundler;
 
 __________________________________________________________________________________________
+
+## Use
+
+- Download repo;
+- npm install - install all dependent npm packages;
+- npm start - monitor files and open in browser;
+- npm run build - collect production;
+
 
 
 

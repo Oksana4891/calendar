@@ -249,3 +249,8 @@ th {
 .block-participants_btn:hover {
     background-color: #f5d8bc;
 }
+
+
+.over {
+  background-color: rgba(241, 206, 195, 0.5);
+}
