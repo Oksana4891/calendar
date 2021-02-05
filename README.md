@@ -14,6 +14,7 @@ Create a simple meeting planning calendar for a meeting room in your office:
 - Filter meetings for a particular team member;
 - Add new meetings;
 - Delete meetings;
+- Change meeting day/time using drag and drop technique on "Calendar";
 __________________________________________________________________________________________
 
 
