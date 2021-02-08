@@ -32,15 +32,17 @@ function dragAndDrop(e) {
 
     function dragEnter(e) {
         e.preventDefault();
-        
+        this.classList.add('over');      
     }
 
 
     function dragLeave(e) {
-        e.stopPropagation();
+        e.preventDefault();
+        this.classList.remove('over');     
     }
 
-    function dragDrop(e) {
+    function dragDrop(e) { 
+        this.classList.remove('over');
         this.append(dragItem);
         const indexDayCopyEvent = this.getAttribute('index-day');
         const indexTimeCopyEvent = this.getAttribute('index-time');
