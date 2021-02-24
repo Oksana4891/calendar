@@ -1,6 +1,7 @@
 import removeDateEventInArr from '../arr/removeEventinArr';
 
 function removeEvent(event) {
+
     if (event.target.classList.contains('js-remove')) {
         const nameEvent = event.target.previousElementSibling.innerText;
         if (confirm(`Are you sure you want to delete ${nameEvent} event`)) {

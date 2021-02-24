@@ -18,12 +18,26 @@
 .section-calendar_btn {
   background: #f6be84;
   border: 1px solid#E2806C;
-  padding: 0 50px;
+  padding: 10px 40px;
   font-weight: normal;
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
   text-align: center;
+}
+
+.addition-btn {
+  background: white;
+  color: grey;
+}
+
+.btn-openEvent {
+  cursor: none;
+  opacity: 0;
+}
+.btn-openEvent.is-active {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .section-calendar_select {
@@ -76,7 +90,9 @@ th {
 
 .calendar_cell--close {
   position: absolute;
-  cursor: pointer;
+  display: none;
+  opacity: 1;
+  cursor: none;
   top: 2px;
   right: 5px;
   width: 30px;
@@ -84,6 +100,13 @@ th {
   line-height: 1;
   font-size: 25px;
 }
+
+.calendar.is-active .calendar_cell--close {
+  display: block;
+  cursor: pointer;
+}
+
+
 
 /* POPUP ADD EVENT */
 
@@ -254,3 +277,89 @@ th {
 .over {
   background-color: rgba(241, 206, 195, 0.5);
 }
+
+
+.popup-login {
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(209, 149, 108, 0.7);
+  z-index: 300;
+  overflow: auto;
+}
+
+.popup-login.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.popup-login_wrapper {
+  position: relative;
+  width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+  margin-top: 120px;
+  background-color: white;
+  z-index: 400;
+  border: 2px solid #e26b92;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.35);
+}
+
+
+.popup-login--title {
+  text-align: center;
+  color: #e26b92;
+  flex-basis: 40%;
+  padding: 20px;
+  margin-top: 0px;
+  font-size: 25px;
+}
+
+
+.popup_select-user {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin:  0 auto;
+  margin-bottom: 50px;
+}
+
+.popup_select-user {
+  padding:0px 30px;
+}
+
+
+.popup-login_btn {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.section-login {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 30px; 
+}
+
+.section-login span {
+  padding-right: 10px;
+}
+
+.type-user {
+   font-weight: 600;
+}
+
+.section-login_btn {
+  background: white;
+  font-size: 14px;
+  border: 1px solid  #e26b92;
+  cursor: pointer;
+}
+

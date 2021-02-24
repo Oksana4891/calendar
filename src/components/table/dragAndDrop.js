@@ -4,9 +4,9 @@ import calendarArr from "../../utils/date.js";
 
 let dragItem = null;
 
-refs.table.addEventListener('dragstart', dragAndDrop, false);
-refs.table.addEventListener('dragend', dragEnd, false);
 
+    refs.table.addEventListener('dragstart', dragAndDrop, false);
+    refs.table.addEventListener('dragend', dragEnd, false);
 
 function dragAndDrop(e) {
     dragItem = e.target;
@@ -57,5 +57,8 @@ function dragAndDrop(e) {
 
 
 function dragEnd(e) {
+    console.log("0987");
   dragItem = null;
 }
+
+

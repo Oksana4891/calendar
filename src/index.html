@@ -7,20 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-     
+    <div class="section-login">
+        <div class="section-login_user-name js-infoUser">
+            <span class="type-user"></span>
+            <span class="name-user"></span>
+        </div>
+        <button class="section-login_btn js-change-user">Change user</button> 
+    </div>
+
      <div class="section-calendar">
-         <div class="section-calendar_top-block">
+      <div class="section-calendar_top-block">
      <h1 class="section-calendar_title">Calendar</h1>
        <select  class="section-calendar_select js-filterParticipants" name="participants">  
         <option value="All members">All members</option>    
-        <option value="Alex">Alex</option>
-        <option value="Mark">Mark</option>
-        <option value="Maria">Maria</option>
-        <option value="Bob">Bob</option>
-        <option value="Oksana">Oksana</option>
-        <option value="Michael">Michael</option>
+        <!-- ADD div user  js -->
        </select>
-     <button class="section-calendar_btn js-open-eventPopup">New Event +</button>  
+     <button class="section-calendar_btn btn-openEvent js-open-eventPopup" disabled>New Event +</button>  
       </div>
      <table class="calendar" id="calendar">
            <tr class="calendar_title">
@@ -57,12 +59,7 @@
          <div class="block-participants_btn js-remove_participants">-</div>
         </div>
          <div class="scrollbar-participants js_participants-block">
-            <div>Alex</div>
-            <div>Mark</div>
-            <div>Maria</div>
-            <div>Bob</div>
-            <div>Oksana</div>
-            <div>Michael</div>
+           <!-- ADD div user  js -->
          </div>
          </div>
          <span class="popup-event_text">Day:</span>
@@ -92,6 +89,16 @@
         </div> 
          <button class="popup_close js-close-eventPopup"><strong>&times;</strong></button>
          </form>
+     </div>
+     
+     <div class="popup-login  js-login">
+         <div class="popup-login_wrapper">
+         <div class="popup-login--title">Please login</div>
+         <select  class="popup_select-user section-calendar_select  js-user">    
+             <!-- ADD div user js --> 
+        </select>
+        <button class="popup-login_btn section-calendar_btn js-btn-login">Confirm</button>
+     </div>
      </div>
 </body>
 </html>
