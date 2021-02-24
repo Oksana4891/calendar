@@ -20,7 +20,7 @@ function login (e) {
 
     let userType=searchUser.constructor.name;
     let userName =searchUser.name;
-
+     console.log(searchUser.constructor.name);
     let infoUser=refs.infoUser;
     infoUser.children[0].textContent=userType+':';
     infoUser.children[1].textContent=searchUser.name;
