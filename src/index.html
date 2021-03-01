@@ -46,7 +46,7 @@
      </div>
 
      <div class="popup-event  js_eventPopup">
-         <form class="popup-event_form js-event_form">
+         <form class="popup-event_form js-event_form" action="http://158.101.166.74:8080/api/data/oks-om/events" method="POST">
          <div class="popup-event_form--title">New event</div>
          <div class="popup-event_form--date">
          <span class="popup-event_text">Name of the event:</span>
@@ -85,7 +85,7 @@
          </div>
          <div class="popup_bnt_block">
          <button class="popup_bnt popup_bnt_cancel ja-cancel-addEvent" type="button">Cancel</button>  
-         <button class="popup_bnt popup_bnt_add js-add-event" type="click">Create</button>    
+         <button class="popup_bnt popup_bnt_add js-add-event" type="submit">Create</button>    
         </div> 
          <button class="popup_close js-close-eventPopup"><strong>&times;</strong></button>
          </form>

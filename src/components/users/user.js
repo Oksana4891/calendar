@@ -1,5 +1,5 @@
 import refs from "../../utils/refs";
-import filterMember from '../arr/filterMember';
+import filterMember from '../table/filterMember';
 
 class User  {
 

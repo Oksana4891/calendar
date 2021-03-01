@@ -1,5 +1,4 @@
 import refs from '../../utils/refs.js';
-import removeDateEventInArr from '../arr/removeEventinArr';
 import calendarArr from "../../utils/date.js";
 
 let dragItem = null;

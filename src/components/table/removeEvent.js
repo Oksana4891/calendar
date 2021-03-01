@@ -1,15 +1,12 @@
-import removeDateEventInArr from '../arr/removeEventinArr';
+import  removeEventServer from "../../server/removeData";
 
 function removeEvent(event) {
-
     if (event.target.classList.contains('js-remove')) {
+        const id = event.target.parentNode.id;
+        const blockEvent=event.target.parentNode;
         const nameEvent = event.target.previousElementSibling.innerText;
         if (confirm(`Are you sure you want to delete ${nameEvent} event`)) {
-            const blockEvent = event.target.parentElement;
-            const cellEvent = blockEvent.parentElement;
-            const indexDay = cellEvent.getAttribute('index-day');
-            const indexTime = cellEvent.getAttribute('index-time');
-            removeDateEventInArr(indexDay, indexTime);
+            removeEventServer(id);
             blockEvent.remove();
         }
     }

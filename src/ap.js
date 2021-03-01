@@ -6,10 +6,11 @@ import closePopup from './components/formEvent/close';
 import "./components/formEvent/getFormDate.js";
 import addParticipants from './components/formEvent/addParticipants.js';
 import removeParticipants from './components/formEvent/removeParticipants.js';
-// import './components/table/dragAndDrop.js';
 import login from './components/users/login';
 import './components/users/addUsers';
+import  renderAllEvents from "./server/renderAllEvents";
 
+renderAllEvents();
 createTableCells(calendarArr, refs.rowsTime);
 
 
@@ -29,7 +30,10 @@ refs.btnChangeUser.addEventListener('click', popupLoginOpen);
 function popupLoginOpen(e) {
     e.preventDefault;
     refs.popupLogin.classList.add('is-open');
-};
+}
+
+
+
 
 
     

@@ -1,32 +1,67 @@
 import refs from '../../utils/refs.js';
-import calendarArr from '../../utils/date.js';
-import addEventToArr from '../arr/addEventToArr.js';
-import clearForm from '../formEvent/clearForm.js';
+import closePopup from "../formEvent/close";
+import serverApi from "../../server/infoServer";
+import renderEvent from "../table/renderEvent";
 
-refs.btnEddEvent.addEventListener('click', getFormDate);
+refs.form.addEventListener('submit', e => {
+    e.preventDefault();
 
-function getFormDate(event) {
-    event.preventDefault();
     const formDate = new FormData(refs.form);
-    const date = {};
+    const obj = {};
 
     formDate.forEach((value, name) => {
-        date[name] = value;
+        obj[name] = value;
     });
 
-    let indexDay =calendarArr.findIndex((item)=>item.day==date.day);
-    let indexTime = calendarArr[indexDay].time.findIndex((item)=>item.hour==date.time);
+    const json = { data: `${JSON.stringify(obj)}` };
 
+    fetch(serverApi.getURL)
+        .then(response => response.json())
+        .then(parsedResponse => {
+            if (parsedResponse == null) {
+                fetch(serverApi.pushURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(json),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        renderEvent(data);
+                        closePopup();
+                    })
+                    .catch(alert);
+            }
+            else {
+                let arrData = parsedResponse.filter(item => {
+                    if (item.data === 'string') {
+                        return;
+                    } else {
+                        return item;
+                    }
+                });
 
-    if(!calendarArr[indexDay].time[indexTime].busy) {
-        addEventToArr(calendarArr, date.day, date.time, date.participants, date.event);
-        refs.popup.classList.remove('is-open');
+                const checkData = arrData.some(item => {
+                    const objData = JSON.parse(item.data);
+                    return obj.day == objData.day && obj.time == objData.time;
+                });
 
-        clearForm(refs.form);
-    }
-    else {
-        alert  ("Failed to create an event. Time slot is already booked");
-        return;
-    }
+                if (checkData) {
+                    alert('Failed to create an event. Time slot is already booked');
+                }
 
-}
+                if (!checkData) {
+                    fetch(serverApi.pushURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(json),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            renderEvent(data);
+                            closePopup();
+                        })
+                        .catch(alert);
+                }
+            }
+        });
+});
