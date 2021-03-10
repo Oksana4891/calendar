@@ -12,12 +12,13 @@ function login(e) {
   refs.bntOpenPopupAddEvent.disabled = true;
   refs.bntOpenPopupAddEvent.classList.remove('is-active');
   refs.table.classList.remove('is-active');
+  User.filter();
 
-  const value = e.target.previousElementSibling.value;
-  const searchUser = userArr.find(user => user.name == value);
+  const { value } = e.target.previousElementSibling;
+  const searchUser = userArr.find((user) => user.name === value);
 
-  let userName = searchUser.name;
-  let infoUser = refs.infoUser;
+  const userName = searchUser.name;
+  const { infoUser } = refs;
   if (searchUser instanceof User) {
     infoUser.children[0].textContent = 'User:';
   }
@@ -28,13 +29,12 @@ function login(e) {
 
   infoUser.children[1].textContent = userName;
 
-  searchUser.filter();
   if (searchUser instanceof Admin) {
     refs.bntOpenPopupAddEvent.disabled = false;
     refs.bntOpenPopupAddEvent.classList.add('is-active');
     refs.table.classList.add('is-active');
-    searchUser.addEvent();
-    searchUser.removeEvent();
+    Admin.addEvent();
+    Admin.removeEvent();
   }
   refs.popupLogin.classList.remove('is-open');
 }
